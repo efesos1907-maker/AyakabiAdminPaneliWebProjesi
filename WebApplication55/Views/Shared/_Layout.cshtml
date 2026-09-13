@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Adım Adım Ayakkabı</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebApplication55.styles.css" asp-append-version="true" />
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+        .main-navbar {
+            background-color: #000000 !important;
+            padding: 12px 0;
+        }
+        .nav-link-custom {
+            color: #dfd7cd !important;
+            font-weight: 500;
+            padding: 8px 18px !important;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        .nav-link-custom:hover, .nav-link-custom.active {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #ffffff !important;
+        }
+        .footer-custom {
+            background-color: #000000;
+            color: #dfd7cd;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md main-navbar shadow-sm mb-4">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center text-white fw-bold" asp-area="" asp-controller="Ayakkabi" asp-action="Index">
+                    <img src="~/ayakabısite/images/adim_adim_logo_runner.png" alt="Logo" height="35" class="me-2" onerror="this.style.display='none'" />
+                    <span>Adım Adım <span class="text-warning">Ayakkabı</span></span>
+                </a>
+                <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Menüyü Aç/Kapat">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-md-inline-flex justify-content-between">
+                    <ul class="navbar-nav ms-auto gap-2">
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom" asp-area="" asp-controller="Ayakkabi" asp-action="Index">👟 Ayakkabılar (CRUD)</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom" asp-area="" asp-controller="Ayakkabi" asp-action="Create">+ Yeni Ekle</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom" href="/ayakabısite/index.html" target="_blank">🌐 Web Sitesi Tasarımı</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer-custom">
+        <div class="container text-center">
+            <p class="mb-1 fw-bold text-white">Adım Adım Ayakkabı &copy; @DateTime.Now.Year - Veritabanı Bağımsız CRUD Sistemi</p>
+            <small class="text-white-50">Örnek Şablon: <a href="/ayakabısite/index.html" class="text-warning text-decoration-none">ayakabısite/index.html</a></small>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

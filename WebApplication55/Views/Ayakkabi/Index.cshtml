@@ -1,0 +1,297 @@
+@model IEnumerable<WebApplication55.Models.Ayakkabi>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adım Adım Ayakkabı</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 40px;
+            background-color: #000000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .yoneldirme a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            margin-left: 20px;
+            background-color: rgb(197, 190, 180);
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: all 0.5s ease;
+        }
+
+        .yoneldirme a:hover {
+            background-color: white;
+            color: burlywood;
+        }
+
+        .ayakkabi-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            min-height: 400px;
+        }
+
+        .ayakkabi-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .ayakkabi-kart {
+            background-color: white;
+            border-radius: 20px;
+            transition: all 0.5s ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .ayakkabi-kart:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transform: translateY(10px);
+            transition: all 0.5s ease;
+        }
+
+        .ayakkabi-kart img {
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+            padding: 10px;
+            transition: all 0.5s ease-in;
+        }
+
+        .ayakkabi-kart img:hover {
+            transform: scale(1.05);
+        }
+
+        .ayakkabibilgi {
+            padding: 15px;
+            background-color: rgb(223, 215, 205);
+            border-radius: 20px;
+            transition: all 1s ease-in;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .ayakkabibilgi:hover {
+            background-color: rgb(0, 0, 0);
+            color: antiquewhite;
+        }
+
+        .ayakkabibilgi h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .ayakkabibilgi p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .ayakkabi-fiyat {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .ayakkabi-fiyat span {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .ayakkabifiyat2 a {
+            text-decoration: none;
+            background-color: rgb(197, 190, 180);
+            color: #333;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .ayakkabifiyat2 a:hover {
+            background-color: rgb(136, 131, 124);
+            color: white;
+        }
+
+        .bos-vitrin {
+            text-align: center;
+            padding: 70px 20px;
+            color: #666;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        footer {
+            background-color: #000000;
+            color: white;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+
+        .footeryonetim {
+            display: flex;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .calismasaati,
+        .iletisim,
+        .hakkimizda {
+            width: 30%;
+            line-height: 1.8;
+        }
+
+        .sosyalmedya {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .sosyalmedya h3 {
+            margin-bottom: 15px;
+        }
+
+        .sosyalmedya a {
+            margin: 0 10px;
+        }
+
+        .sosyalmedya img {
+            transition: transform 0.5s ease-in;
+        }
+
+        .sosyalmedya img:hover {
+            transform: scale(1.2);
+        }
+
+        @@media (max-width: 900px) {
+            .ayakkabi-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @@media (max-width: 600px) {
+            .ayakkabi-grid {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .yoneldirme a {
+                margin: 5px;
+                font-size: 14px;
+                padding: 8px 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="/Ayakkabi/Index">
+                <img src="/ayakabısite/images/adim_adim_logo_runner.png" alt="" width="200" height="Auto">
+            </a>
+        </div>
+        <div class="yoneldirme">
+            <a href="/Ayakkabi/Index">Anasayfa</a>
+            <a href="#hakkimizda">Hakkımızda</a>
+            <a href="#iletisim">İletişim</a>
+        </div>
+    </header>
+
+    <div class="ayakkabi-container">
+        @if (!Model.Any())
+        {
+            <div class="bos-vitrin">
+                <h2>👟 Vitrinde Henüz Ürün Bulunmuyor</h2>
+                <p>En yeni ayakkabı modellerimiz çok yakında burada listelenecektir.</p>
+            </div>
+        }
+        else
+        {
+            <div class="ayakkabi-grid">
+                @foreach (var item in Model)
+                {
+                    <div class="ayakkabi-kart">
+                        <img src="@(string.IsNullOrEmpty(item.ResimUrl) ? "/ayakabısite/images/AYKB.webp" : item.ResimUrl)" 
+                             alt="@item.Baslik" 
+                             onerror="this.src='/ayakabısite/images/AYKB.webp';" />
+                        <div class="ayakkabibilgi">
+                            <h3>@item.Baslik</h3>
+                            <p>@item.Aciklama</p>
+                            <div class="ayakkabi-fiyat">
+                                <span>₺@item.Fiyat.ToString("N2")</span>
+                                <div class="ayakkabifiyat2">
+                                    <a href="#">satın al</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+
+    <footer>
+        <div class="footeryonetim">
+            <div class="calismasaati">
+                <h3>Çalışma Saatleri</h3>
+                <p>Hafta içi 09:00 - 18:00 </p>
+                <p>Cumartesi 10:00 - 16:00</p>
+                <p>Pazar Kapalı</p>
+            </div>
+            <div class="iletisim" id="iletisim">
+                <h3>İletişim Bilgileri</h3>
+                <p>Telefon: (212) 299-1000</p>
+                <p>Email: info@ayakkabısatinal.com</p>
+                <p>Adres: Örnek Mah. 123. Sok. No:45, İstanbul</p>
+            </div>
+            <div class="hakkimizda" id="hakkimizda">
+                <h3>Hakkımızda</h3>
+                <p>Biz Ayakabı satışı konusunda uzmanlaşmış bir firmayız. Müşterilerimize en iyi hizmeti sunmayı hedefliyoruz.</p>
+            </div>
+        </div>
+        <div class="sosyalmedya">
+            <h3>Bizi Takip Edin</h3>
+            <a href="https://www.facebook.com" target="_blank"><img src="/ayakabısite/images/facebook.webp" alt="Facebook" width="30" height="30"></a>
+            <a href="https://www.instagram.com" target="_blank"><img src="/ayakabısite/images/instagram.png" alt="Instagram" width="30" height="30"></a>
+            <a href="https://www.youtube.com" target="_blank"><img src="/ayakabısite/images/yotube.png" alt="YouTube" width="30" height="30"></a>
+            <a href="https://www.twitter.com" target="_blank"><img src="/ayakabısite/images/twiiter.png" alt="Twitter" height="30" width="30"></a>
+        </div>
+    </footer>
+
+</body>
+
+</html>
