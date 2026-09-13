@@ -7,6 +7,7 @@
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
 **Adım Adım Ayakkabı**, ASP.NET Core 8.0 MVC mimarisi kullanılarak geliştirilmiş, herhangi bir harici veritabanı kurulumu gerektirmeden (**In-Memory / Bellek İçi Veri Yönetimi**) çalışan, modern kullanıcı vitrini ve bağımsız admin yönetim paneline sahip dinamik bir e-ticaret vitrin projesidir.
+<img width="1920" height="953" alt="AYAKKABICI1" src="https://github.com/user-attachments/assets/64e4b1d9-7579-4d2a-af3e-8b2147fe7f7e" />
 
 <img width="1920" height="953" alt="AYAKKABUICXIASID34" src="https://github.com/user-attachments/assets/65c2b5d4-e3a7-4c06-b8c9-4444a541af3f" />
 
@@ -14,7 +15,7 @@
 
 <img width="1920" height="953" alt="AYAKKABICI2" src="https://github.com/user-attachments/assets/325cf348-8d04-464b-8cba-88d5e7a9b249" />
 
-<img width="1920" height="953" alt="AYAKKABICI1" src="https://github.com/user-attachments/assets/64e4b1d9-7579-4d2a-af3e-8b2147fe7f7e" />
+
 
 
 ## 🌟 Öne Çıkan Özellikler
